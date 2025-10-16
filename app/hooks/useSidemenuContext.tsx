@@ -8,6 +8,8 @@ interface SidemenuContextType {
 	setSelectedCategory: (category: SidemenuCategory) => void;
 	filterData: string[];
 	setFilterData: (data: string[]) => void;
+	search: string;
+	setSearch: (term: string) => void;
 }
 
 const SidemenuContext = createContext<SidemenuContextType | undefined>(
@@ -22,12 +24,15 @@ export const SidemenuProvider = ({ children }: SidemenuProviderProps) => {
 	const [selectedCategory, setSelectedCategory] =
 		useState<SidemenuCategory>('apps');
 	const [filterData, setFilterData] = useState<string[]>(sampleData);
+	const [search, setSearch] = useState('');
 
 	const value = {
 		selectedCategory,
 		setSelectedCategory,
 		filterData,
 		setFilterData,
+		search,
+		setSearch,
 	};
 
 	return (

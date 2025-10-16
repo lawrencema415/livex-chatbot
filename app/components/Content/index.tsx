@@ -1,9 +1,10 @@
 import { List } from '@mantine/core';
 import SideMenu from './SideMenu';
-import { useSidemenuContext } from '../../hooks/useSidemenuContext';
+import { highlightText } from '~/utils/utility';
+import { useSidemenuContext } from '~/hooks';
 
 const Content = () => {
-	const { filterData } = useSidemenuContext();
+	const { filterData, search } = useSidemenuContext();
 
 	return (
 		<div className='w-full h-full flex flex-row'>
@@ -13,7 +14,7 @@ const Content = () => {
 			<div className='w-4/5 h-full p-5'>
 				<List>
 					{filterData.map((item, index) => (
-						<List.Item key={index}>{item}</List.Item>
+						<List.Item key={index}>{highlightText(item, search)}</List.Item>
 					))}
 				</List>
 			</div>

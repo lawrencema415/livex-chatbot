@@ -2,7 +2,7 @@ import Chatbot from '~/components/Chatbot';
 import Content from '~/components/Content';
 import Navbar from '~/components/Navbar';
 
-export function Welcome() {
+export const Welcome = () => {
 	return (
 		<main>
 			<Navbar />
@@ -10,4 +10,4 @@ export function Welcome() {
 			<Chatbot />
 		</main>
 	);
-}
+};
