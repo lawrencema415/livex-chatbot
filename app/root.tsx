@@ -12,6 +12,7 @@ import {
 	mantineHtmlProps,
 } from '@mantine/core';
 
+import { SidemenuProvider } from './hooks/useSidemenuContext';
 import type { Route } from './+types/root';
 import './app.css';
 import '@mantine/core/styles.css';
@@ -40,7 +41,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
 				<Links />
 			</head>
 			<body>
-				<MantineProvider>{children}</MantineProvider>
+				<SidemenuProvider>
+					<MantineProvider>{children}</MantineProvider>
+				</SidemenuProvider>
 				<ScrollRestoration />
 				<Scripts />
 			</body>

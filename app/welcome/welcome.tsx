@@ -7,9 +7,7 @@ export function Welcome() {
 		<main>
 			<Navbar />
 			<Content />
-			<div className='absolute right-5 bottom-5'>
-				<Chatbot />
-			</div>
+			<Chatbot />
 		</main>
 	);
 }
